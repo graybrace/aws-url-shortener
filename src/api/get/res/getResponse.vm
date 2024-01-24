@@ -1,0 +1,6 @@
+#set($DDBResponse = $input.path('$'))
+#if ($DDBResponse.toString().contains("Attributes"))
+    #set($context.responseOverride.header.Location = $DDBResponse.Attributes.url.S)
+#else
+    #set($context.responseOverride.status = 404)
+#end

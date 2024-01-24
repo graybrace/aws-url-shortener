@@ -1,0 +1,30 @@
+{
+    "TableName": "TABLE_NAME",
+    "Key": {
+#if( $input.path('$.slashtag') != "" )
+        "path": { "S": "$input.path('$.slashtag')" }
+#else
+        "path": { "S": "$context.extendedRequestId" }
+#end
+    },
+    "UpdateExpression": "SET #url = :url, #created = :created, #numClicks = :numClicks, #ttl = :ttl",
+    "ConditionExpression": "attribute_not_exists(#path)",
+    "ExpressionAttributeNames": {
+        "#path": "path",
+        "#url": "url",
+        "#created": "created",
+        "#numClicks": "numClicks",
+        "#ttl": "ttl"
+    },
+    "ExpressionAttributeValues": {
+        ":url": { "S": "$input.path('$.url')" },
+        ":created": { "S": "$context.requestTime" },
+        ":numClicks": { "N": "0" },
+#if( $input.path('$.expiration') != "" )
+        ":ttl": { "N": "$input.path('$.expiration')" }
+#else
+        ":ttl": { "S": "" }
+#end
+    },
+    "ReturnValues": "ALL_NEW"
+}

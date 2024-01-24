@@ -1,0 +1,10 @@
+#set($DDBResponse = $input.path('$'))
+#if ($DDBResponse.toString().contains("Attributes"))
+#set($context.responseOverride.header.Access-Control-Allow-Origin = "*")
+{
+    "url": "https://DOMAIN/$DDBResponse.Attributes.path.S"
+}
+#else
+#set($context.responseOverride.status = 500)
+"Unexpected error occurred"
+#end

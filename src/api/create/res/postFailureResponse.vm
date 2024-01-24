@@ -1,0 +1,6 @@
+#if( $input.path('$').toString().contains("The conditional request failed") )
+"Short link already exists"
+#else
+#set($context.responseOverride.status = 500)
+"Unexpected error occurred"
+#end
