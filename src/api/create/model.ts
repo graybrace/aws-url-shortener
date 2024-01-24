@@ -14,12 +14,12 @@ export const addRequestModel = (api: RestApi, id: string): IModel => {
                 slashtag: {
                     type: JsonSchemaType.STRING,
                     minLength: 1,
-                    pattern: "^[^\"]$"
+                    pattern: "^[^\"]+$"
                 },
                 url: {
                     type: JsonSchemaType.STRING,
                     minLength: 1,
-                    pattern: "^[^\"]$"
+                    pattern: "^[^\"]+$"
                 },
                 expiration: {
                     type: JsonSchemaType.INTEGER

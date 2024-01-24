@@ -1,6 +1,6 @@
 {
   "name": "aws-url-shortener",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Construct for an extensible URL shortener service built on DynamoDB and API Gateway",
   "author": "Gray Brace",
   "homepage": "https://github.com/graybrace/aws-url-shortener",
