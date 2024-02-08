@@ -1,6 +1,6 @@
 {
   "name": "aws-url-shortener",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Construct for an extensible URL shortener service built on DynamoDB and API Gateway",
   "author": "Gray Brace",
   "homepage": "https://github.com/graybrace/aws-url-shortener",
@@ -48,18 +48,18 @@
     "test": "jest --config jest.config.cjs --no-cache"
   },
   "dependencies": {
-    "aws-cdk-lib": "^2.122.0",
+    "aws-cdk-lib": "^2.126.0",
     "constructs": "^10.3.0"
   },
   "devDependencies": {
-    "@types/jest": "^29.5.11",
-    "@typescript-eslint/eslint-plugin": "^6.19.1",
-    "@typescript-eslint/parser": "^6.19.1",
+    "@types/jest": "^29.5.12",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
     "copyfiles": "^2.4.1",
     "eslint": "^8.56.0",
     "jest": "^29.7.0",
     "jest-junit": "^16.0.0",
-    "knip": "^4.2.1",
+    "knip": "^4.5.0",
     "npm-run-all": "^4.1.5",
     "rimraf": "^5.0.5",
     "ts-jest": "^29.1.2",
